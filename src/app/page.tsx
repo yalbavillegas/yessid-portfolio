@@ -1,18 +1,17 @@
-import Navbar from "@/components/layout/Navbar";
-import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
+import Contact from "@/components/sections/Contact";
+import Hero from "@/components/sections/Hero";
 import Projects from "@/components/sections/Projects";
+import Technologies from "@/components/sections/Technologies";
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
-
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-      </main>
-    </>
+    <main>
+      <Hero />
+      <About />
+      <Projects />
+      <Technologies />
+      <Contact />
+    </main>
   );
 }

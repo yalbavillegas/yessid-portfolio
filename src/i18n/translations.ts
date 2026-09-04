@@ -19,6 +19,8 @@ export const translations = {
         "Diseño y desarrollo aplicaciones modernas, productos digitales y soluciones de software enfocadas en funcionalidad, rendimiento y una experiencia de usuario cuidada.",
       projects: "Explorar proyectos",
       about: "Conocer más",
+      companyRole: "Fundador & Software Engineer en",
+      company: "YALBA LABS",
     },
 
     about: {
@@ -58,6 +60,33 @@ export const translations = {
         completed: "Completado",
       },
     },
+
+    technologies: {
+      eyebrow: "Tecnologías",
+      title: "Herramientas para construir en distintas plataformas.",
+      description:
+        "Trabajo con diferentes tecnologías según las necesidades del producto, desde aplicaciones móviles y de escritorio hasta experiencias web modernas.",
+
+      groups: {
+        mobile: "Mobile",
+        desktop: "Desktop",
+        web: "Web",
+        tools: "Datos y herramientas",
+      },
+    },
+
+    contact: {
+      eyebrow: "Contacto",
+      title: "Construyamos algo juntos.",
+      description:
+          "¿Tienes una idea, un proyecto o una oportunidad de colaboración? Estoy disponible para conversar sobre desarrollo de software, productos digitales y nuevas soluciones tecnológicas.",
+      email: "Correo",
+      github: "GitHub",
+      linkedin: "LinkedIn",
+      sendEmail: "Escríbeme",
+      availability: "Disponible para proyectos y colaboraciones",
+      company: "YALBA LABS",
+    },
   },
 
   en: {
@@ -78,6 +107,8 @@ export const translations = {
         "I design and develop modern applications, digital products, and software solutions focused on functionality, performance, and thoughtful user experiences.",
       projects: "Explore projects",
       about: "Learn more",
+      companyRole: "Founder & Software Engineer at",
+      company: "YALBA LABS",
     },
 
     about: {
@@ -116,6 +147,33 @@ export const translations = {
         development: "In development",
         completed: "Completed",
       },
+    },
+
+    technologies: {
+      eyebrow: "Technologies",
+      title: "Tools for building across platforms.",
+      description:
+        "I work with different technologies depending on the product, from mobile and desktop applications to modern web experiences.",
+
+      groups: {
+        mobile: "Mobile",
+        desktop: "Desktop",
+        web: "Web",
+        tools: "Data & tools",
+      },
+    },
+
+    contact: {
+      eyebrow: "Contact",
+      title: "Let's build something together.",
+      description:
+        "Have an idea, a project, or a collaboration opportunity? I'm available to discuss software development, digital products, and new technological solutions.",
+      email: "Email",
+      github: "GitHub",
+      linkedin: "LinkedIn",
+      sendEmail: "Get in touch",
+      availability: "Available for projects and collaborations",
+      company: "YALBA LABS",
     },
   },
 } as const;

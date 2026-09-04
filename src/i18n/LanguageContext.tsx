@@ -28,20 +28,39 @@ export function LanguageProvider({
 }: {
   children: ReactNode;
 }) {
-  const [language, setLanguageState] = useState<Language>("es");
+  const [language, setLanguageState] =
+    useState<Language>("es");
 
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("language");
+    const savedLanguage =
+      window.localStorage.getItem("language");
 
-    if (savedLanguage === "es" || savedLanguage === "en") {
-      setLanguageState(savedLanguage);
+    if (
+      savedLanguage === "es" ||
+      savedLanguage === "en"
+    ) {
+      queueMicrotask(() => {
+        setLanguageState(savedLanguage);
+      });
     }
   }, []);
 
-  const setLanguage = (newLanguage: Language) => {
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
+  const setLanguage = (
+    newLanguage: Language
+  ) => {
     setLanguageState(newLanguage);
-    localStorage.setItem("language", newLanguage);
-    document.documentElement.lang = newLanguage;
+
+    window.localStorage.setItem(
+      "language",
+      newLanguage
+    );
+
+    document.documentElement.lang =
+      newLanguage;
   };
 
   return (
