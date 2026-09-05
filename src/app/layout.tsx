@@ -37,6 +37,10 @@ export const metadata: Metadata = {
   creator: "Yessid Alba",
   publisher: "YALBA LABS",
 
+  verification: {
+    google: "XRYsome19UXOY3VuZIfWxTd3KZAW2SAOw8rOzsi-p10",
+  },
+
   keywords: [
     "Yessid Alba",
     "YALBA LABS",
