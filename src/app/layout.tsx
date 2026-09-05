@@ -17,6 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://yessid-portfolio.vercel.app"),
   title: {
     default: "Yessid Alba | Software Engineer",
     template: "%s | Yessid Alba",
@@ -57,14 +58,27 @@ export const metadata: Metadata = {
     "Bolivia",
   ],
 
+  alternates: {
+    canonical: "/",
+  },
+
   openGraph: {
     type: "website",
+    url: "/",
     locale: "es_BO",
     alternateLocale: ["en_US"],
     siteName: "Yessid Alba | YALBA LABS",
     title: "Yessid Alba | Software Engineer",
     description:
       "Software, productos digitales y soluciones multiplataforma desarrolladas por Yessid Alba bajo YALBA LABS.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Yessid Alba — Software Engineer · YALBA LABS",
+      },
+    ],
   },
 
   twitter: {
@@ -72,6 +86,7 @@ export const metadata: Metadata = {
     title: "Yessid Alba | Software Engineer",
     description:
       "Software, productos digitales y soluciones multiplataforma desarrolladas por Yessid Alba bajo YALBA LABS.",
+    images: ["/opengraph-image"],
   },
 
   robots: {
