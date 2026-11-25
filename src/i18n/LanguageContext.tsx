@@ -47,6 +47,10 @@ export function LanguageProvider({
 
   useEffect(() => {
     document.documentElement.lang = language;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && window.location.pathname === "/") {
+      metaDesc.setAttribute("content", translations[language].meta.description);
+    }
   }, [language]);
 
   const setLanguage = (

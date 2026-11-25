@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Yessid Alba — Software Engineer · YALBA LABS";
+  "Yessid Alba — Software Engineer & Technology Innovator · Yessid Alba Labs";
 
 export const size = {
   width: 1200,
@@ -20,9 +20,11 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#000000",
-          color: "#ffffff",
-          padding: "72px 80px",
+          background:
+            "linear-gradient(135deg, #050811 0%, #090e1c 55%, #0d1527 100%)",
+          color: "#f8fafc",
+          padding: "70px 80px",
+          border: "1px solid rgba(212, 175, 55, 0.25)",
         }}
       >
         <div
@@ -35,24 +37,45 @@ export default function OpenGraphImage() {
           <div
             style={{
               display: "flex",
-              fontSize: 26,
-              fontWeight: 700,
-              letterSpacing: "8px",
+              alignItems: "center",
+              gap: 16,
             }}
           >
-            YESSID ALBA
+            <div
+              style={{
+                display: "flex",
+                fontSize: 26,
+                fontWeight: 700,
+                letterSpacing: "7px",
+                color: "#f8fafc",
+              }}
+            >
+              YESSID ALBA
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                fontSize: 20,
+                fontWeight: 600,
+                letterSpacing: "6px",
+                color: "#d4af37",
+              }}
+            >
+              · LABS
+            </div>
           </div>
 
           <div
             style={{
               display: "flex",
-              fontSize: 24,
-              fontWeight: 700,
-              letterSpacing: "6px",
-              color: "#a1a1aa",
+              fontSize: 18,
+              fontWeight: 600,
+              letterSpacing: "4px",
+              color: "#94a3b8",
             }}
           >
-            YALBA LABS
+            YESSIDALBALABS.TECH
           </div>
         </div>
 
@@ -60,43 +83,44 @@ export default function OpenGraphImage() {
           style={{
             display: "flex",
             flexDirection: "column",
-            maxWidth: 900,
+            maxWidth: 980,
           }}
         >
           <div
             style={{
               display: "flex",
-              fontSize: 20,
+              fontSize: 19,
               textTransform: "uppercase",
-              letterSpacing: "7px",
-              color: "#71717a",
-              marginBottom: 28,
+              letterSpacing: "6px",
+              color: "#d4af37",
+              marginBottom: 24,
             }}
           >
-            SOFTWARE ENGINEER · SYSTEMS ANALYST
+            SOFTWARE ENGINEER & TECHNOLOGY INNOVATOR
           </div>
 
           <div
             style={{
               display: "flex",
               flexDirection: "column",
-              fontSize: 76,
+              fontSize: 70,
               fontWeight: 700,
-              lineHeight: 0.95,
-              letterSpacing: "-4px",
+              lineHeight: 0.98,
+              letterSpacing: "-3px",
             }}
           >
-            <div style={{ display: "flex" }}>
-              Construyo software
+            <div style={{ display: "flex", color: "#f8fafc" }}>
+              Engineering intelligent solutions.
             </div>
 
             <div
               style={{
                 display: "flex",
-                color: "#71717a",
+                color: "#94a3b8",
+                marginTop: 6,
               }}
             >
-              con propósito.
+              Building software that matters.
             </div>
           </div>
         </div>
@@ -104,11 +128,29 @@ export default function OpenGraphImage() {
         <div
           style={{
             display: "flex",
-            fontSize: 20,
-            color: "#52525b",
+            justifyContent: "space-between",
+            alignItems: "center",
+            borderTop: "1px solid rgba(148, 163, 184, 0.18)",
+            paddingTop: 26,
+            fontSize: 19,
+            color: "#94a3b8",
           }}
         >
-          iOS · macOS · Android · Web · Python · Flutter
+          <div style={{ display: "flex" }}>
+            Rust · Python · Swift · Kotlin · TypeScript · Flutter · SQLite ·
+            Mach-O
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              color: "#d4af37",
+              fontSize: 16,
+              letterSpacing: "4px",
+            }}
+          >
+            YALBA LABS
+          </div>
         </div>
       </div>
     ),

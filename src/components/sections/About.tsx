@@ -1,81 +1,132 @@
 "use client";
 
+import TechBadge from "@/components/ui/TechBadge";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function About() {
   const { t } = useLanguage();
 
+  const stats = [
+    {
+      value: t.about.stats.engineering,
+      label: t.about.stats.engineeringLabel,
+    },
+    {
+      value: t.about.stats.programming,
+      label: t.about.stats.programmingLabel,
+    },
+    {
+      value: t.about.stats.analysis,
+      label: t.about.stats.analysisLabel,
+    },
+    {
+      value: t.about.stats.products,
+      label: t.about.stats.productsLabel,
+    },
+  ];
+
+  const specialties = [
+    t.about.specialties.multiplatform,
+    t.about.specialties.architecture,
+    t.about.specialties.systemsAnalysis,
+    t.about.specialties.databaseEngineering,
+    t.about.specialties.reverseEngineering,
+    t.about.specialties.electronics,
+    t.about.specialties.products,
+  ];
+
   return (
     <section
       id="sobre-mi"
-      className="border-t border-white/10 bg-zinc-950 px-6 py-24 text-white sm:py-36"
+      className="border-t border-border-subtle bg-surface px-6 py-24 text-fg-primary sm:py-36"
     >
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
+        {/* TOP PROFILE BIO */}
+        <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20">
           <div>
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.28em] text-zinc-500 sm:mb-5 sm:text-sm sm:tracking-[0.3em]">
-              {t.about.eyebrow}
-            </p>
+            <div className="mb-4 inline-flex items-center gap-3 sm:mb-5">
+              <span aria-hidden="true" className="h-px w-6 bg-gold" />
+              <p className="font-mono text-xs font-medium uppercase tracking-[0.26em] text-gold sm:text-[13px] sm:tracking-[0.28em]">
+                {t.about.eyebrow}
+              </p>
+            </div>
 
-            <h2 className="max-w-xl text-[2.75rem] font-semibold leading-[1.02] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
+            <h2 className="max-w-xl text-[2.4rem] font-semibold leading-[1.05] tracking-[-0.04em] text-fg-primary sm:text-5xl lg:text-[3.35rem]">
               {t.about.title}
             </h2>
           </div>
 
-          <div className="space-y-6 sm:space-y-8">
-            <p className="text-base leading-7 text-zinc-300 sm:text-xl sm:leading-8">
+          <div className="space-y-6">
+            <p className="text-base font-medium leading-7 text-fg-primary sm:text-xl sm:leading-8">
+              {t.about.lead}
+            </p>
+
+            <p className="text-sm leading-7 text-fg-secondary sm:text-base sm:leading-8">
               {t.about.description}
             </p>
 
-            <p className="max-w-2xl text-sm leading-7 text-zinc-500 sm:text-base">
+            <p className="text-sm leading-7 text-fg-muted sm:text-base sm:leading-8">
               {t.about.secondary}
             </p>
 
-            <div className="flex flex-wrap gap-2.5 pt-1 sm:gap-3 sm:pt-2">
-              <span className="rounded-full border border-white/10 px-3.5 py-2 text-xs text-zinc-400 sm:px-4 sm:text-sm">
-                {t.about.specialties.multiplatform}
-              </span>
-
-              <span className="rounded-full border border-white/10 px-3.5 py-2 text-xs text-zinc-400 sm:px-4 sm:text-sm">
-                {t.about.specialties.electronics}
-              </span>
-
-              <span className="rounded-full border border-white/10 px-3.5 py-2 text-xs text-zinc-400 sm:px-4 sm:text-sm">
-                {t.about.specialties.products}
-              </span>
+            <div className="flex flex-wrap gap-2 pt-2 sm:gap-2.5">
+              {specialties.map((specialty) => (
+                <TechBadge key={specialty} label={specialty} />
+              ))}
             </div>
           </div>
         </div>
 
-        <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:mt-20 sm:grid-cols-3">
-          <div className="bg-zinc-950 p-6 sm:p-8">
-            <p className="text-3xl font-semibold tracking-tight sm:text-4xl">
-              {t.about.stats.engineering}
-            </p>
+        {/* VERIFIED METRICS BAR */}
+        <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-border-subtle bg-border-subtle sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="group relative bg-card p-6 transition-colors duration-200 hover:bg-elevated sm:p-8"
+            >
+              <span
+                aria-hidden="true"
+                className="absolute inset-x-0 top-0 h-0.5 bg-gold/0 transition-colors duration-300 group-hover:bg-gold/75"
+              />
+              <p className="text-3xl font-semibold tracking-tight text-fg-primary sm:text-4xl">
+                {stat.value}
+              </p>
+              <p className="mt-2 font-mono text-xs uppercase tracking-[0.14em] text-fg-muted">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
 
-            <p className="mt-2 text-sm text-zinc-500">
-              {t.about.stats.engineeringLabel}
-            </p>
+        {/* ENGINEERING PHILOSOPHY & TECHNICAL VISION */}
+        <div className="mt-16 sm:mt-24">
+          <div className="mb-8 flex items-center gap-3">
+            <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-gold" />
+            <h3 className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-fg-secondary sm:text-sm">
+              {t.about.philosophyHeading}
+            </h3>
           </div>
 
-          <div className="bg-zinc-950 p-6 sm:p-8">
-            <p className="text-3xl font-semibold tracking-tight sm:text-4xl">
-              {t.about.stats.programming}
-            </p>
+          <div className="grid gap-5 md:grid-cols-2">
+            {t.about.philosophy.map((pillar) => (
+              <div
+                key={pillar.code}
+                className="group rounded-2xl border border-border-subtle bg-card p-6 transition duration-200 hover:border-border-gold/55 sm:p-8"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-border-gold bg-gold-muted font-mono text-xs font-semibold text-gold">
+                    {pillar.code}
+                  </span>
+                  <h4 className="text-lg font-semibold tracking-tight text-fg-primary transition-colors group-hover:text-gold">
+                    {pillar.title}
+                  </h4>
+                </div>
 
-            <p className="mt-2 text-sm text-zinc-500">
-              {t.about.stats.programmingLabel}
-            </p>
-          </div>
-
-          <div className="bg-zinc-950 p-6 sm:p-8">
-            <p className="text-3xl font-semibold tracking-tight sm:text-4xl">
-              {t.about.stats.analysis}
-            </p>
-
-            <p className="mt-2 text-sm text-zinc-500">
-              {t.about.stats.analysisLabel}
-            </p>
+                <p className="mt-4 text-sm leading-7 text-fg-muted sm:text-base">
+                  {pillar.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

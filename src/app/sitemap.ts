@@ -1,9 +1,20 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl =
-  "https://yessid-portfolio.vercel.app";
+import { SITE_CONFIG } from "@/config/site";
+import { getPublicProjects } from "@/data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = SITE_CONFIG.url;
+
+  const projectRoutes: MetadataRoute.Sitemap = getPublicProjects().map(
+    (project) => ({
+      url: `${baseUrl}/projects/${project.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: project.featured ? 0.9 : 0.8,
+    })
+  );
+
   return [
     {
       url: baseUrl,
@@ -11,33 +22,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
-
-    {
-      url: `${baseUrl}/projects/city-flier`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-
-    {
-      url: `${baseUrl}/projects/billetera`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-
-    {
-      url: `${baseUrl}/projects/asist-finance`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-
-    {
-      url: `${baseUrl}/projects/vitalscan`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+    ...projectRoutes,
   ];
 }
